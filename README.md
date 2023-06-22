@@ -116,3 +116,68 @@ List of operations and their syntax:
   decompress path_to_file path_to_destination
   ```
   NB! After decompressing of previously compressed file result should not differ with originally compressed file
+
+---
+
+Implementation:
+
+1. Idea is to run an app using command line.. as we see in the code:
+
+As abstraction..
+
+```js
+import Application from "./app/Application.js";
+import ErrorHandler from "./app/ErrorHandler.js";
+import CommandLine from "./app/CommandLine.js";
+
+const application = new Application();
+const errorHandler = new ErrorHandler();
+const commandLine = new CommandLine(application.getSession());
+
+commandLine.init(async (input) => {
+  try {
+    await application.run(input);
+  } catch (e) {
+    errorHandler.handle(e);
+  }
+});
+```
+
+Crate all classes and getSession function
+
+2. Handle an errors..
+
+3. Let init command line
+   All methods are done:
+
+- init
+- start new line
+- exit
+
+4. Let run an App, mather fuckers)
+
+- For run it we need to:
+  4.1. Take and actions and arguments
+  4.2. Authentication
+  To get them trough the CLI line..
+
+5. Auth
+   Create an Auth class
+
+```js
+export class Auth {
+  // Login use @returns {string|any}
+
+  login() {
+    let username = process.argv
+      .filter((arg) => arg.startsWith("--username"))
+      .shift()
+      ?.split("=")
+      ?.pop();
+
+    return username === undefined ? "Non authorized user" : username;
+  }
+}
+```
+
+And.. implement that in to App class prepareSession..
