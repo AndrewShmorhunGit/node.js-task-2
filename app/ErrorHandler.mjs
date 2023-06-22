@@ -1,5 +1,5 @@
 import ActionNotFound from "../app/errors/ActionNotFound.js";
-import error from "./messages/error.js";
+import error from "./messages/error.mjs";
 
 export class ErrorHandler {
   // Handle application exceptions @param e

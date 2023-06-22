@@ -116,3 +116,32 @@ List of operations and their syntax:
   decompress path_to_file path_to_destination
   ```
   NB! After decompressing of previously compressed file result should not differ with originally compressed file
+
+Implementation:
+
+1. Idea is to run an app using command line.. as we see in the code:
+
+As abstraction..
+
+```js
+import Application from "./app/Application.js";
+import ErrorHandler from "./app/ErrorHandler.js";
+import CommandLine from "./app/CommandLine.js";
+
+const application = new Application();
+const errorHandler = new ErrorHandler();
+const commandLine = new CommandLine(application.getSession());
+
+commandLine.init(async (input) => {
+  try {
+    await application.run(input);
+  } catch (e) {
+    errorHandler.handle(e);
+  }
+});
+```
+
+Crate all classes and getSession function
+
+2. Handle an errors..
+3. Let init command line:
