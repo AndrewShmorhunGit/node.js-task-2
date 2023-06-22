@@ -155,3 +155,29 @@ Crate all classes and getSession function
 - exit
 
 4. Let run an App, mather fuckers)
+
+- For run it we need to:
+  4.1. Take and actions and arguments
+  4.2. Authentication
+  To get them trough the CLI line..
+
+5. Auth
+   Create an Auth class
+
+```js
+export class Auth {
+  // Login use @returns {string|any}
+
+  login() {
+    let username = process.argv
+      .filter((arg) => arg.startsWith("--username"))
+      .shift()
+      ?.split("=")
+      ?.pop();
+
+    return username === undefined ? "Non authorized user" : username;
+  }
+}
+```
+
+And.. implement that in to App class prepareSession..

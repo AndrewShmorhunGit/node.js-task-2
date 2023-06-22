@@ -1,3 +1,7 @@
+import Auth from "./Auth.mjs";
+import path from "node:path";
+import os from "node:os";
+
 export class Application {
   // Session object @type {null|Object}
   #session = null;
@@ -9,11 +13,18 @@ export class Application {
   // Before the app running we need to prepare the session. And take that preparation constructor function, for this inheritance! Using Auth..
 
   constructor() {
-    this.PrepareSession();
+    this.prepareSession();
   }
 
   prepareSession() {
-    // Authentication fn
+    // Authentication
+
+    const auth = new Auth();
+    // and finally initialize the session
+    this.#session = {
+      user: auth.login(),
+      path: path.resolve(os.homedir()),
+    };
   }
 
   // And then run()
@@ -21,7 +32,7 @@ export class Application {
   // @returns {Promise<void>}
 
   async run(line) {
-    // to run app we need to accept args, and actions
+    // To run app we need to accept args, and actions
     const { action, args } = Application.#prepareParams(line);
 
     // And route to our actions
