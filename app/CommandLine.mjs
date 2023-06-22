@@ -1,17 +1,7 @@
-<<<<<<< Updated upstream
-import readline from "node:readline";
-import { stdin, stdout } from "node:process";
-// import os from "node:os";
-
-=======
-<<<<<<< Updated upstream
-=======
 import readline from "node:readline";
 import { stdin, stdout } from "node:process";
 import os from "node:os";
 
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 export class CommandLine {
   #session;
   #rl;

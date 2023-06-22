@@ -117,6 +117,8 @@ List of operations and their syntax:
   ```
   NB! After decompressing of previously compressed file result should not differ with originally compressed file
 
+---
+
 Implementation:
 
 1. Idea is to run an app using command line.. as we see in the code:
@@ -144,4 +146,12 @@ commandLine.init(async (input) => {
 Crate all classes and getSession function
 
 2. Handle an errors..
-3. Let init command line:
+
+3. Let init command line
+   All methods are done:
+
+- init
+- start new line
+- exit
+
+4. Let run an App, mather fuckers)
