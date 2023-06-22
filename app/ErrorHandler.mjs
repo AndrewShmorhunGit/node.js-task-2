@@ -1,3 +1,6 @@
+import ActionNotFound from "../app/errors/ActionNotFound.js";
+import error from "./messages/error.js";
+
 export class ErrorHandler {
   // Handle application exceptions @param e
 
