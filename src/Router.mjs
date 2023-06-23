@@ -12,6 +12,7 @@ export class Router {
     clear: "./services/console/clear.mjs",
     rn: "./services/files/rn.mjs",
     rm: "./services/files/rm.mjs",
+    mv: "./services/files/rm.mjs",
   };
 
   // Run routing

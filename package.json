@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndrewShmorhunGit/node.js-task-2"
+    "url": "git+https://github.com/AndrewShmorhunGit/node.js-task-2",
+    "ssh": "git@github.com:AndrewShmorhunGit/node.js-task-2.git"
   },
   "author": "Andrew Shmorhun",
   "license": "ISC",
