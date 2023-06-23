@@ -1,6 +1,6 @@
 import path from "node:path";
 import fs from "node:fs/promises";
-import { parsePaths } from "../../utils/parse.mjs";
+import { parsePaths } from "../../utils/functions.mjs";
 import { OperationFailedError } from "../../errors/OperationFailedError.mjs";
 
 export async function cd(session, args) {

@@ -1,9 +1,15 @@
 import { ParsePathError } from "../errors/ParsePathError.mjs";
+import { access } from "node:fs/promises";
 
-// Parse path from string
-// @param string
-// @param needArgCount
-// @returns {*[]}
+export async function fileExist(path) {
+  try {
+    await access(path);
+  } catch (e) {
+    return false;
+  }
+
+  return true;
+}
 
 export function parsePaths(string, needArgCount = -1) {
   let inQuotes = false,

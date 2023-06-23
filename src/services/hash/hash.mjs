@@ -1,6 +1,6 @@
 import path from "node:path";
 import { readFile } from "node:fs/promises";
-import { parsePaths } from "../../utils/parse.mjs";
+import { parsePaths } from "../../utils/functions.mjs";
 import { OperationFailedError } from "../../errors/OperationFailedError.mjs";
 
 export async function hash(session, args) {

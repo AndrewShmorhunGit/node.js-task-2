@@ -9,7 +9,8 @@ export class Router {
     ls: "./services/navigation/ls.mjs",
     os: "./services/os/os.mjs",
     hash: "./services/hash/hash.mjs",
-    clear: "./services/navigation/clear.mjs",
+    clear: "./services/console/clear.mjs",
+    rn: "./services/files/rn.mjs",
   };
 
   // Run routing
