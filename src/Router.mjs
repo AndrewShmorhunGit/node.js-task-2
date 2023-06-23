@@ -8,6 +8,8 @@ export class Router {
     cd: "./services/navigation/cd.mjs",
     ls: "./services/navigation/ls.mjs",
     os: "./services/os/os.mjs",
+    hash: "./services/hash/hash.mjs",
+    clear: "./services/navigation/clear.mjs",
   };
 
   // Run routing
