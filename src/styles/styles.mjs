@@ -34,3 +34,10 @@ export function log(text, style = styles.standard) {
 
   return log(chalk.green(text));
 }
+
+export class TabletListStyle {
+  constructor(Name, Type) {
+    this.Name = Name;
+    this.Type = Type;
+  }
+}
