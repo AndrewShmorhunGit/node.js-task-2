@@ -5,6 +5,7 @@ export class Router {
   #routes = {
     // routes to actions..
     up: "./services/navigation/up.mjs",
+    cd: "./services/navigation/cd.mjs",
   };
 
   // Run routing
@@ -33,7 +34,7 @@ export class Router {
   // @returns {Promise<void>}
 
   async #runAction(action, session, args) {
-    const { default: actionFn } = await import(this.#routes[action]);
+    const { [action]: actionFn } = await import(this.#routes[action]);
     await actionFn(session, args);
     // console.log(actionFn);
   }

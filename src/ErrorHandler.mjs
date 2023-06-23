@@ -1,5 +1,5 @@
 import { ActionNotFound } from "./errors/ActionNotFound.mjs";
-import { errors } from "./messages/error.mjs";
+import { errors } from "./content/error.mjs";
 import { log, styles } from "./styles/styles.mjs";
 
 export class ErrorHandler {

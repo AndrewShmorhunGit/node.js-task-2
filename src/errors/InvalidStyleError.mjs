@@ -1,4 +1,4 @@
-import { errors } from "../messages/error.mjs";
+import { errors } from "../content/error.mjs";
 
 export class InvalidStyleError extends Error {
   message = errors.invalidStyle;

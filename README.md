@@ -160,7 +160,7 @@ Crate all classes and getSession function
 
 ---
 
-4. Let run an App, mather fuckers)
+4. Let's run an App
 
 - For run it we need to:
   4.1. Take and actions and arguments
