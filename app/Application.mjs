@@ -1,14 +1,11 @@
 import { Auth } from "./Auth.mjs";
 import path from "node:path";
 import os from "node:os";
+import { Router } from "./Router.mjs";
 
 export class Application {
   // Session object @type {null|Object}
   #session = null;
-
-  getSession() {
-    return this.#session;
-  }
 
   // Before the app running we need to prepare the session. And take that preparation constructor function, for this inheritance! Using Auth..
 
@@ -36,8 +33,8 @@ export class Application {
     const { action, args } = Application.#prepareParams(line);
 
     // And route to our actions
-    // const actionRunner = new Router();
-    // await actionRunner.run(action, this.#session, args);
+    const actionRunner = new Router();
+    await actionRunner.run(action, this.#session, args);
   }
   // Args and action description:
 
@@ -53,5 +50,9 @@ export class Application {
       action,
       args,
     };
+  }
+
+  getSession() {
+    return this.#session;
   }
 }

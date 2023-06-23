@@ -1,5 +1,5 @@
 import * as path from "node:path";
-import OperationFailedError from "../../errors/OperationFailedError.mjs";
+import { OperationFailedError } from "../../errors/OperationFailedError.mjs";
 
 export default async function (session, args) {
   if (args && args.length > 0) {

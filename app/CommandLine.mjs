@@ -1,6 +1,6 @@
 import readline from "node:readline";
-import { stdin, stdout } from "node:process";
 import os from "node:os";
+import { stdin, stdout } from "node:process";
 
 export class CommandLine {
   #session;
@@ -40,16 +40,6 @@ export class CommandLine {
     console.log(`Welcome to the File Manager, ${this.#session.user}!`);
   }
 
-  startNewLine() {
-    this.printCurrentPath();
-    this.#rl.prompt();
-  }
-
-  // Print current path for user
-  printCurrentPath() {
-    console.log(`You are currently in ${this.#session.path}`);
-  }
-
   // Exit handler @param withOEL
 
   exit = (withOEL = false) => {
@@ -61,4 +51,14 @@ export class CommandLine {
 
     this.#rl.close();
   };
+
+  startNewLine() {
+    this.printCurrentPath();
+    this.#rl.prompt();
+  }
+
+  // Print current path for user
+  printCurrentPath() {
+    console.log(`You are currently in ${this.#session.path}`);
+  }
 }

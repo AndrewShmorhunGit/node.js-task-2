@@ -220,7 +220,8 @@ commandLine.init(async (input) => {
 async run(line) {
   const {action, args} = Application.#prepareParams(line);
 
-    const actionRunner = new Router();
+  // Don't forget to connect it! 😎
+  const actionRunner = new Router();
   await actionRunner.run(action, this.#session, args);
 }
 

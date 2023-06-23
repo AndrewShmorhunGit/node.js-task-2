@@ -1,4 +1,4 @@
-import ActionNotFound from "../app/errors/ActionNotFound.mjs";
+import { ActionNotFound } from "../app/errors/ActionNotFound.mjs";
 
 export class Router {
   // Set #routes param
@@ -11,7 +11,7 @@ export class Router {
   // @params action, session, args
   // @returns {Promise<void>}
 
-  async run(action, action, args) {
+  async run(action, session, args) {
     // Check an action
     if (!this.#actionExist(action)) {
       throw new ActionNotFound();
@@ -35,5 +35,6 @@ export class Router {
   async #runAction(action, session, args) {
     const { default: actionFn } = await import(this.#routes[action]);
     await actionFn(session, args);
+    // console.log(actionFn);
   }
 }
