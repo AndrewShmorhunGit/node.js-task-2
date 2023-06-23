@@ -1,5 +1,5 @@
-import ActionNotFound from "../app/errors/ActionNotFound.js";
-import error from "./messages/error.mjs";
+import { ActionNotFound } from "../app/errors/ActionNotFound.mjs";
+import { errors } from "./messages/error.mjs";
 
 export class ErrorHandler {
   // Handle application exceptions @param e
@@ -8,7 +8,7 @@ export class ErrorHandler {
     let errorMessage;
 
     if (e instanceof ActionNotFound) {
-      errorMessage = error.invalidOutput;
+      errorMessage = errors.invalidOutput;
     } else {
       errorMessage = e.message;
     }

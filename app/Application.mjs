@@ -1,4 +1,4 @@
-import Auth from "./Auth.mjs";
+import { Auth } from "./Auth.mjs";
 import path from "node:path";
 import os from "node:os";
 

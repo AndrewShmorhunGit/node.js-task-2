@@ -4,6 +4,7 @@ export class Router {
   // Set #routes param
   #routes = {
     // routes to actions..
+    up: "./services/navigation/up.mjs",
   };
 
   // Run routing

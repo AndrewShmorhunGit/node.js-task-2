@@ -1,6 +1,6 @@
-import Application from "./app/Application.mjs";
-import ErrorHandler from "./app/ErrorHandler.mjs";
-import CommandLine from "./app/CommandLine.mjs";
+import { Application } from "./app/Application.mjs";
+import { ErrorHandler } from "./app/ErrorHandler.mjs";
+import { CommandLine } from "./app/CommandLine.mjs";
 // And change wrong extensions
 
 const application = new Application();

@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "File Manager",
   "type": "module",
-  "main": "app.mjs",
+  "main": "index..mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.mjs"
+    "start": "node ./index.mjs"
   },
   "repository": {
     "type": "git",
