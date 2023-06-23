@@ -1,5 +1,6 @@
-import { ActionNotFound } from "../app/errors/ActionNotFound.mjs";
+import { ActionNotFound } from "./errors/ActionNotFound.mjs";
 import { errors } from "./messages/error.mjs";
+import { log, styles } from "./styles/styles.mjs";
 
 export class ErrorHandler {
   // Handle application exceptions @param e
@@ -13,6 +14,6 @@ export class ErrorHandler {
       errorMessage = e.message;
     }
 
-    console.log(errorMessage);
+    log(errorMessage, styles.error);
   }
 }

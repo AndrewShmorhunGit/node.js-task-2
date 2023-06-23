@@ -1,6 +1,7 @@
 import readline from "node:readline";
 import os from "node:os";
 import { stdin, stdout } from "node:process";
+import { log, styles } from "./styles/styles.mjs";
 
 export class CommandLine {
   #session;
@@ -37,7 +38,7 @@ export class CommandLine {
 
   // Print greeting
   #greeting() {
-    console.log(`Welcome to the File Manager, ${this.#session.user}!`);
+    log(`Welcome to the File Manager, ${this.#session.user}!`, styles.success);
   }
 
   // Exit handler @param withOEL
@@ -45,8 +46,9 @@ export class CommandLine {
   exit = (withOEL = false) => {
     const eol = withOEL ? os.EOL : "";
 
-    console.log(
-      `${eol}Thank you for using File Manager, ${this.#session.user}!`
+    log(
+      `${eol}Thank you for using File Manager, ${this.#session.user}!`,
+      styles.success
     );
 
     this.#rl.close();
@@ -59,6 +61,6 @@ export class CommandLine {
 
   // Print current path for user
   printCurrentPath() {
-    console.log(`You are currently in ${this.#session.path}`);
+    log(`You are currently in ${this.#session.path}`, styles.info);
   }
 }

@@ -1,4 +1,4 @@
-import { ActionNotFound } from "../app/errors/ActionNotFound.mjs";
+import { ActionNotFound } from "../src/errors/ActionNotFound.mjs";
 
 export class Router {
   // Set #routes param
