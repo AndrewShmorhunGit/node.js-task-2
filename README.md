@@ -181,3 +181,5 @@ export class Auth {
 ```
 
 And.. implement that in to App class prepareSession..
+
+6. Next step is to implement Router class as `actionRunner` in the Application:
