@@ -7,6 +7,7 @@ export class Router {
     up: "./services/navigation/up.mjs",
     cd: "./services/navigation/cd.mjs",
     ls: "./services/navigation/ls.mjs",
+    os: "./services/os/os.mjs",
   };
 
   // Run routing
