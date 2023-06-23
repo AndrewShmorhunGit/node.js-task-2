@@ -145,7 +145,11 @@ commandLine.init(async (input) => {
 
 Crate all classes and getSession function
 
+---
+
 2. Handle an errors..
+
+---
 
 3. Let init command line
    All methods are done:
@@ -154,12 +158,16 @@ Crate all classes and getSession function
 - start new line
 - exit
 
+---
+
 4. Let run an App, mather fuckers)
 
 - For run it we need to:
   4.1. Take and actions and arguments
   4.2. Authentication
   To get them trough the CLI line..
+
+---
 
 5. Auth
    Create an Auth class
@@ -182,4 +190,53 @@ export class Auth {
 
 And.. implement that in to App class prepareSession..
 
+---
+
 6. Next step is to implement Router class as `actionRunner` in the Application:
+
+In that class we are implementing #routes object, as a connector with our app services.., apply `run` method, to connect it to Application `run()` method, checking the action.. and implement `#runAction()` Route method:
+
+```js
+async #runAction(action, session, args) {
+        const {default: actionFn} = await import(this.#routes[action]);
+        await actionFn(session, args);
+    }
+```
+
+Here is all run chain:
+
+```js
+// index.mjs
+const application = new Application();
+commandLine.init(async (input) => {
+  try {
+    await application.run(input);
+  } catch (e) {
+    errorHandler.handle(e);
+  }
+});
+
+// Application.mjs
+async run(line) {
+  const {action, args} = Application.#prepareParams(line);
+
+    const actionRunner = new Router();
+  await actionRunner.run(action, this.#session, args);
+}
+
+// Router.mjs
+async run(action, session, args) {
+  if (!this.#actionExist(action)) {
+    throw new ActionNotFound();
+  }
+
+  await this.#runAction(action,session, args);
+}
+
+async #runAction(action, session, args) {
+  const {default: actionFn} = await import(this.#routes[action]);
+  await actionFn(session, args);
+}
+```
+
+---

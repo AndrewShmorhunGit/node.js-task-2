@@ -1,7 +1,7 @@
 import ActionNotFound from "../app/errors/ActionNotFound.mjs";
 
 export class Router {
-  // Set #routes = {
+  // Set #routes param
   #routes = {
     // routes to actions..
   };
