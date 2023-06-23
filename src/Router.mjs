@@ -11,6 +11,7 @@ export class Router {
     hash: "./services/hash/hash.mjs",
     clear: "./services/console/clear.mjs",
     rn: "./services/files/rn.mjs",
+    rm: "./services/files/rm.mjs",
   };
 
   // Run routing

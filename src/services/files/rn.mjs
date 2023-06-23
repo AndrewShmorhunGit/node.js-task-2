@@ -13,7 +13,7 @@ export async function rn(session, args) {
     await fs.access(from);
 
     if (await fileExist(to)) {
-      throw new Error("Destination file exists!");
+      throw new Error("Destination file already exists!");
     }
 
     await fs.rename(from, to);
