@@ -14,6 +14,7 @@ export class Router {
     rm: "./services/files/rm.mjs",
     mv: "./services/files/mv.mjs",
     cp: "./services/files/cp.mjs",
+    cat: "./services/files/cat/cat.mjs",
   };
 
   // Run routing
