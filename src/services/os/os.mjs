@@ -1,5 +1,6 @@
 import * as sys from "node:os";
 import { OperationFailedError } from "../../errors/OperationFailedError.mjs";
+import { log, styles } from "../../styles/styles.mjs";
 
 export async function os(session, args) {
   if (args && args.length !== 1) {
@@ -36,7 +37,7 @@ export async function os(session, args) {
             return { model, speed };
           })
         )
-      : console.log(result);
+      : log(result, styles.info);
   } catch (e) {
     throw new OperationFailedError();
   }

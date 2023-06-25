@@ -12,6 +12,9 @@ export async function cd(session, args) {
     if (to.startsWith('"') && to.endsWith('"')) {
       to = to.substring(1, to.length - 1);
     }
+    if (to.startsWith("'") && to.endsWith("'")) {
+      to = to.substring(1, to.length - 1);
+    }
 
     const newPath = path.resolve(session.path, to);
     await fs.access(newPath);

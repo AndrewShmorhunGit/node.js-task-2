@@ -1,5 +1,5 @@
 import { createBrotliCompress } from "node:zlib";
-import archive from "../archive.mjs";
+import { archive } from "./archive.mjs";
 
 export async function compress(session, args) {
   const archStrategy = createBrotliCompress();

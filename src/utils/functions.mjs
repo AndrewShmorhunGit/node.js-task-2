@@ -12,36 +12,36 @@ export async function fileExist(path) {
 }
 
 export function parsePaths(string, needArgCount = -1) {
-  let inQuotes = false,
+  let isInQuotes = false,
     parsedPath = "",
     results = [];
 
   for (const index in string) {
     const char = string[index];
-    if (char === '"') {
-      inQuotes = !inQuotes;
-      if (!inQuotes && parsedPath.length > 0) {
+    if (char === '"' || char === "'") {
+      isInQuotes = !isInQuotes;
+      if (!isInQuotes && parsedPath.length > 0) {
         results.push(parsedPath);
         parsedPath = "";
         continue;
       }
       continue;
-    } else if (!inQuotes && char === " " && parsedPath.length) {
+    } else if (!isInQuotes && char === " " && parsedPath.length) {
       results.push(parsedPath);
       parsedPath = "";
       continue;
-    } else if (!inQuotes && char === " ") {
+    } else if (!isInQuotes && char === " ") {
       continue;
     }
 
     parsedPath += char;
   }
 
-  if (inQuotes) {
-    throw new ParsePathError();
+  if (isInQuotes) {
+    throw new ParsePathError("Operation Failed, check argument quotes!");
   }
 
-  if (parsedPath.length > 0 && !inQuotes) {
+  if (parsedPath.length > 0 && !isInQuotes) {
     results.push(parsedPath);
   }
 

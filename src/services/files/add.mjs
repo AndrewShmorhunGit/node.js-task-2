@@ -3,7 +3,7 @@ import fs from "node:fs";
 import { parsePaths, fileExist } from "../../utils/functions.mjs";
 import { OperationFailedError } from "../../errors/OperationFailedError.mjs";
 
-export default async function (session, args) {
+export async function add(session, args) {
   try {
     const argPaths = parsePaths(args.join(" "), 1);
 

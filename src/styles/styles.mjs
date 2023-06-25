@@ -32,7 +32,7 @@ export function log(text, style = styles.standard) {
     return log(chalk.red(text));
   }
 
-  return log(chalk.green(text));
+  return log(chalk.blue(text));
 }
 
 export class TabletListStyle {

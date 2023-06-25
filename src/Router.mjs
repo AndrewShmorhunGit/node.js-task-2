@@ -16,8 +16,8 @@ export class Router {
     cp: "./services/files/cp.mjs",
     cat: "./services/files/cat.mjs",
     add: "./services/files/add.mjs",
-    compress: "./services/files/compress.mjs",
-    decompress: "./services/files/decompress.mjs",
+    compress: "./services/archive/compress.mjs",
+    decompress: "./services/archive/decompress.mjs",
   };
 
   // Run routing
