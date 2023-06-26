@@ -1,4 +1,4 @@
-# USE WriteCheckList.md FILE FOR APP CHECKING.. 😎
+# USE CheckList.md FOR APP CHECKING.. 😎
 
 ## Assignment: File Manager
 
