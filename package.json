@@ -1,0 +1,21 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "File Manager",
+  "type": "module",
+  "main": "./index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewShmorhunGit/node.js-task-2",
+    "ssh": "git@github.com:AndrewShmorhunGit/node.js-task-2.git"
+  },
+  "author": "Andrew Shmorhun",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0"
+  }
+}
